@@ -1,0 +1,24 @@
+import { Icon } from './Icons'
+
+// One row in the Wealth Breakdown card: icon, label, progress bar, score.
+export default function BreakdownRow({ name, score, color = 'var(--mw-forest-soft)', icon = 'dot' }) {
+  return (
+    <div className="mw-breakdown-row">
+      <span className="mw-breakdown-ic" style={{ color }}>
+        <Icon name={icon} size={18} />
+      </span>
+      <span className="mw-breakdown-mid">
+        <span className="mw-breakdown-top">
+          <span className="mw-breakdown-name">{name}</span>
+          <span className="mw-breakdown-score">{score}</span>
+        </span>
+        <span className="mw-bar">
+          <span
+            className="mw-bar-fill"
+            style={{ width: `${score}%`, background: `linear-gradient(90deg, ${color}99, ${color})` }}
+          />
+        </span>
+      </span>
+    </div>
+  )
+}
